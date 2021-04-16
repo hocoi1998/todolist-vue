@@ -1,26 +1,58 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <el-container id="app">
+    <el-header>
+      <el-row>
+        <el-col>
+          <h1>MY TO DO APP</h1>
+        </el-col>
+      </el-row>
+    </el-header>
+    <el-main>
+      <el-row>
+        <el-col>
+          <TodoInput></TodoInput>
+          <TodoList></TodoList>
+        </el-col>
+      </el-row>
+      
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TodoInput from './components/TodoInput.vue';
+import TodoList from './components/TodoList.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TodoInput,
+    TodoList
   }
 }
 </script>
 
 <style>
+body {
+  background: linear-gradient(356deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 100%);
+  min-height: 97.5vh;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  border: 1px solid #fff;
+  border-radius: 10px
+}
+h1 {
+  color: red;
+  font-size: 32px;
+  font-weight: bold
+}
+.el-header {
+  text-align: center
+}
+.el-input {
+  max-width: 100%
 }
 </style>
